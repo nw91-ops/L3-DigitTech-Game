@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://dix0kqnnwip3m"]
+
+[ext_resource type="Theme" uid="uid://ruhqx3xyvnii" path="res://default_theme.tres" id="1_ojcfn"]
+[ext_resource type="PackedScene" uid="uid://snpi7ws5wlg5" path="res://window_default.tscn" id="2_7q7y0"]
+
+[node name="Battle" type="Control"]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_ojcfn")
+
+[node name="Bottom" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(200, 48)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.284375
+anchor_top = 0.744444
+anchor_right = 0.8125
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemies" parent="Bottom" instance=ExtResource("2_7q7y0")]
+layout_mode = 2
+
+[node name="Players" parent="Bottom" instance=ExtResource("2_7q7y0")]
+layout_mode = 2
+size_flags_stretch_ratio = 1.66
+
+[node name="Options" parent="." instance=ExtResource("2_7q7y0")]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+offset_left = -36.0
+offset_top = -111.0
+offset_right = 44.0
+offset_bottom = -63.0
+size_flags_stretch_ratio = 2.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Options/VBoxContainer"]
+layout_mode = 2
+text = "Fight"

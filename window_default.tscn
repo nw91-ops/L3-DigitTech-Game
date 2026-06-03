@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://snpi7ws5wlg5"]
+
+[ext_resource type="Texture2D" uid="uid://b8j67d4o8epyh" path="res://Art/ninepatch.png" id="1_yyb1u"]
+
+[node name="WindowDefault" type="NinePatchRect"]
+size_flags_horizontal = 3
+texture = ExtResource("1_yyb1u")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
