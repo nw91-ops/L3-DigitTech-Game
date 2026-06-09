@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ggenxvw8awi3"]
+
+[ext_resource type="Texture2D" uid="uid://dh2mhfv1tjv2q" path="res://Art/tile_0084.png" id="1_dcyey"]
+
+[node name="Player" type="TextureButton"]
+offset_left = 63.0
+offset_top = -145.0
+offset_right = 79.0
+offset_bottom = -129.0
+texture_normal = ExtResource("1_dcyey")
