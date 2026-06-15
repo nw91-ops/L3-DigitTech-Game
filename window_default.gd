@@ -1,0 +1,2 @@
+class_name Window_Default extends NinePatchRect
+

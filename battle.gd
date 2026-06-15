@@ -1,3 +1,7 @@
 extends Control
 
-@onready _options: WindowDefault
+@onready var options: Window_Default = $Options
+
+@onready var _options_menu: Menu = $Options/Options
+
+
