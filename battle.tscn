@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ruhqx3xyvnii" path="res://default_theme.tres" id="1_ojcfn"]
 [ext_resource type="PackedScene" uid="uid://snpi7ws5wlg5" path="res://window_default.tscn" id="2_7q7y0"]
-[ext_resource type="Script" path="res://battle.gd" id="2_23bt4"]
+[ext_resource type="Script" path="res://Menu.gd" id="2_55iug"]
 [ext_resource type="PackedScene" uid="uid://ggenxvw8awi3" path="res://BattlePlayer.tscn" id="3_nnh2e"]
 [ext_resource type="Texture2D" uid="uid://m0up25uxl3wf" path="res://Art/tile_0121.png" id="4_fdjwe"]
 [ext_resource type="Texture2D" uid="uid://x4qxuw06mpo5" path="res://Art/tile_0122.png" id="5_u46up"]
@@ -16,6 +16,7 @@ script/source = "class_name Menu extends Container
 signal button_focused(Button) 
 signal button_pressed(Button)
 
+var index: int = 0
 
 func get_buttons() -> Array:
 	return get_children()
@@ -25,14 +26,16 @@ func connect_to_buttons() -> void:
 		button.focus_entered.connect(_on_Button_focused.bind(button))
 		button.pressed.connect(_on_Button_pressed.bind(button))
 
-func button_focus() -> void:
-	pass
+func button_focus(n: int = index) -> void:
+	var button: BaseButton = get_buttons()[n]
+	button.grab_focus()
 
 func on_Button_focused(button: BaseButton) -> void:
 	emit_signal(\"button_focused\", button)
 
 func _on_Button_pressed(button: BaseButton) -> void:
 	emit_signal(\"button_pressed\", button)
+
 "
 
 [node name="Battle" type="Control"]
@@ -45,7 +48,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_ojcfn")
-script = ExtResource("2_23bt4")
+script = ExtResource("2_55iug")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

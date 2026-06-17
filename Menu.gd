@@ -4,7 +4,7 @@ extends Control
 @onready var _options_menu: Menu = $Options/Options
 
 func _ready() -> void:
-	_options_menu.connect_to_buttons(self)
+	_options_menu.connect_to_buttons()
 	_options_menu.button_focus(0)
 
 
