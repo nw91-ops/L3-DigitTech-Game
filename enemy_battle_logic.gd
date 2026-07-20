@@ -42,3 +42,27 @@ func take_turn(players:Array[Character]):
 			use_skill(attack_skill, target)
 		else:
 			attack_target(target)
+			
+			func take_turn(players:Array[Character]):
+
+	var hp_percent = float(hp) / max_hp
+
+	if hp_percent < 0.20:
+
+		print(character_name + " has become enraged!")
+
+		attack += 5
+
+		var target = choose_weakest_target(players)
+		use_skill(special_skill, target)
+
+	elif hp_percent < 0.50:
+
+		if randf() < 0.5:
+			use_skill(special_skill, choose_target(players))
+		else:
+			attack_target(choose_target(players))
+
+	else:
+
+		attack_target(choose_target(players))
