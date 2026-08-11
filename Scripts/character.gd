@@ -179,3 +179,11 @@ func is_dead() -> bool:
 
 var critical_chance : float
 var critical_multiplier : float
+
+func apply_burn():
+
+	is_burned = true
+	burn_turns = 3
+
+	print(character_name + " was burned!")
+
