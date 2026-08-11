@@ -173,3 +173,9 @@ func level_up():
 
 func is_dead() -> bool:
 	return hp <= 0
+	
+	@export var base_critical_chance := 10.0
+@export var base_critical_multiplier := 2.0
+
+var critical_chance : float
+var critical_multiplier : float
